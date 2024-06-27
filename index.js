@@ -33,9 +33,9 @@ class RecordStream extends Transform {
 function run (command, shell) {
   return new Promise((resolve, reject) => {
     /* https://github.com/actions/toolkit/issues/1336 use new way of OUTPUT */
-    if(!process.env['GITHUB_OUTPUT']){
-      process.env['GITHUB_OUTPUT'] = true
-      core.info(`GITHUB_OUTPUT env was not set, it was set to ${process.env['GITHUB_OUTPUT']}`)
+    if (!process.env.GITHUB_OUTPUT) {
+      process.env.GITHUB_OUTPUT = true
+      core.info(`GITHUB_OUTPUT env was not set, it was set to ${process.env.GITHUB_OUTPUT}`)
     }
     const outRec = new RecordStream()
     const errRec = new RecordStream()
